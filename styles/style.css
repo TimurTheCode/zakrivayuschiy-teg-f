@@ -366,11 +366,14 @@
 @supports (font-variation-settings: normal) {
   .page {
     font-family: var(--main-ff, sans-serif);
-    font-variation-settings: 'wght' var(--regular-ff, 400), 'slnt' 0;
+    font-variation-settings: "wght" var(--regular-ff, 400), "slnt" 0;
   }
 }
 
-@supports ((text-stroke: 1px var(--label-stroke)) or (-webkit-text-stroke: 1px var(--label-stroke))) {
+@supports (
+  (text-stroke: 1px var(--label-stroke)) or
+    (-webkit-text-stroke: 1px var(--label-stroke))
+) {
   p {
     text-shadow: none;
     -webkit-text-stroke: 1px 1px var(--label-stroke);
