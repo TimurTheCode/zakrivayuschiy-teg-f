@@ -1,6 +1,6 @@
 :root {
   --main-ff: "Inter";
-  --supp-ff: "PressStart2P";
+  --supp-ff: "PressStart2P", fantasy;
   --regular-fw: 400;
   --bold-fw: 700;
   --bg-color: #fff;
@@ -9,9 +9,9 @@
       #d3d3d3 0 2px,
       transparent 2px 4px),
     repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
-    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a);
+    linear-gradient(180deg, #e7e7e7 0%, #1a1a1a 100%);
   --label-stroke: #fff;
   --button-hover-color: #fff;
-  --border-heart-color: #000;
+  --contour-heart-color: #000;
   --fill-heart-color: #ff0000;
 }

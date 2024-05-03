@@ -7,7 +7,7 @@
       #000 0 2px,
       transparent 2px 4px),
     repeating-linear-gradient(180deg, #000 0 2px, transparent 2px 4px),
-    linear-gradient(180deg, #007f0c 0.01%, #004306);
+    linear-gradient(180deg, #007f0c 0%, #004306 100%);
   --label-stroke: #000;
   --button-hover-color: #00cc14;
   --contour-heart-color: #00cc14;
@@ -22,13 +22,13 @@
       #d3d3d3 0 2px,
       transparent 2px 4px),
     repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
-    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a);
+    linear-gradient(180deg, #e7e7e7 0%, #1a1a1a 100%);
   --label-stroke: #fff;
   --button-hover-color: #fff;
   --contour-heart-color: #000;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #000;
     --supp-color: #00cc14;
@@ -43,4 +43,21 @@
     --button-hover-color: #00cc14;
     --contour-heart-color: #00cc14;
   }
-}
+} */
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg-color: #fff;
+  --supp-color: #000;
+  --regular-fw: 400;
+  --bold-fw: 700;
+  --bg-gradient: repeating-linear-gradient(90deg,
+      #d3d3d3 0 2px,
+      transparent 2px 4px),
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a);
+  --label-stroke: #fff;
+  --button-hover-color: #fff;
+  --contour-heart-color: #000;
+    }
+
+  }

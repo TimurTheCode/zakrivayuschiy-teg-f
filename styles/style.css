@@ -3,8 +3,9 @@
   margin-block-end: 100px;
   color: var(--supp-color);
   font-family: "Inter", sans-serif;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, #fff);
   background-image: var(--bg-gradient);
+  background-position: 50% 50%;
   background-size: cover;
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -194,6 +195,7 @@
   text-transform: uppercase;
   text-shadow: -1px 0 var(--label-stroke), 0 1px var(--label-stroke),
     1px 0 var(--label-stroke), 0 -1px var(--label-stroke);
+  text-stroke: 1px 1px var(--label-stroke);
   inset-block-start: 25px;
   inset-inline-end: 25px;
   mix-blend-mode: hard-light;
@@ -206,35 +208,35 @@
   border-block-end: 2px solid var(--supp-color);
 }
 
-.card__image_filter-one {
+.card__image_filter-common {
   filter: opacity(0.9);
 }
 
-.card__image_filter-two {
+.card__image_filter-dark {
   filter: grayscale(0.4);
 }
 
-.card__image_filter-three {
+.card__image_filter-saturate {
   filter: saturate(500%);
 }
 
-.card__image_filter-four {
+.card__image_filter-purple {
   filter: hue-rotate(30deg);
 }
 
-.card__image_filter-five {
+.card__image_filter-invert {
   filter: invert(0.8);
 }
 
-.card__image_filter-six {
+.card__image_filter-retro {
   filter: sepia(80%);
 }
 
-.card__image_filter-seven {
+.card__image_filter-blur {
   filter: blur(12px);
 }
 
-.card__image_filter-eight {
+.card__image_filter-red-green {
   filter: hue-rotate(90deg) invert(0.3);
 }
 
@@ -350,7 +352,7 @@
   }
 
   .dialog {
-    padding: 32px 42px;
+    padding: 30px 35px 25px 40px;
     inline-size: 341px;
     block-size: 191px;
   }
@@ -358,5 +360,20 @@
   .dialog__button {
     inline-size: 257px;
     block-size: 38px;
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-ff, sans-serif);
+    font-variation-settings: 'wght' var(--regular-ff, 400), 'slnt' 0;
+  }
+}
+
+@supports ((text-stroke: 1px var(--label-stroke)) or (-webkit-text-stroke: 1px var(--label-stroke))) {
+  p {
+    text-shadow: none;
+    -webkit-text-stroke: 1px 1px var(--label-stroke);
+    text-stroke: 1px 1px var(--label-stroke);
   }
 }
