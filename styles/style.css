@@ -201,12 +201,19 @@
   color: var(--supp-color);
   font-family: var(--supp-ff), fantasy;
   font-size: 14px;
-  text-transform: uppercase;
   text-shadow: -1px 0 var(--label-stroke), 0 1px var(--label-stroke),
     1px 0 var(--label-stroke), 0 -1px var(--label-stroke);
   inset-block-start: 25px;
   inset-inline-end: 25px;
   mix-blend-mode: hard-light;
+}
+
+@supports ((text-stroke: 1px #000) or (-webkit-text-stroke: 1px #000)) {
+  .card__image-label {
+    -webkit-text-stroke: 1px var(--label-stroke);
+    text-stroke: 1px var(--label-stroke);
+    text-shadow: none;
+  }
 }
 
 .card__image {
@@ -367,21 +374,5 @@
   .dialog__button {
     inline-size: 257px;
     block-size: 38px;
-  }
-}
-
-
-/* @supports (-webkit-text-stroke: 1px var(--label-stroke)) or (text-stroke: 1px var(--label-stroke)) {
-  .card__label {
-    text-shadow: none;
-    -webkit-text-stroke: 1px var(--label-stroke);
-    text-stroke: 1px var(--label-stroke);
-  }
-} */
-@supports ((text-stroke: 1px var(--label-stroke)) or (-webkit-text-stroke: 1px var(--label-stroke))) {
-  .card__image-label {
-    text-shadow: none;
-    -webkit-text-stroke: 1px 1px var(--label-stroke);
-    text-stroke: 1px 1px var(--label-stroke);
   }
 }
