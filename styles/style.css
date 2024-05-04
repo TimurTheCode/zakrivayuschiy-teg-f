@@ -5,10 +5,19 @@
   font-family: "Inter", sans-serif;
   background-color: var(--bg-color, #fff);
   background-image: var(--bg-gradient);
-  background-position: 50% 50%;
+  background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+}
+
+
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-ff, sans-serif);
+    font-variation-settings: "wght" var(--regular-fw), "slnt" 0;
+  }
 }
 
 .container {
@@ -195,7 +204,6 @@
   text-transform: uppercase;
   text-shadow: -1px 0 var(--label-stroke), 0 1px var(--label-stroke),
     1px 0 var(--label-stroke), 0 -1px var(--label-stroke);
-  text-stroke: 1px 1px var(--label-stroke);
   inset-block-start: 25px;
   inset-inline-end: 25px;
   mix-blend-mode: hard-light;
@@ -352,9 +360,8 @@
   }
 
   .dialog {
-    padding: 30px 35px 25px 40px;
+    padding: 30px 35px 25px;
     inline-size: 341px;
-    block-size: 191px;
   }
 
   .dialog__button {
@@ -363,18 +370,16 @@
   }
 }
 
-@supports (font-variation-settings: normal) {
-  .page {
-    font-family: var(--main-ff, sans-serif);
-    font-variation-settings: "wght" var(--regular-ff, 400), "slnt" 0;
-  }
-}
 
-@supports (
-  (text-stroke: 1px var(--label-stroke)) or
-    (-webkit-text-stroke: 1px var(--label-stroke))
-) {
-  p {
+/* @supports (-webkit-text-stroke: 1px var(--label-stroke)) or (text-stroke: 1px var(--label-stroke)) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--label-stroke);
+    text-stroke: 1px var(--label-stroke);
+  }
+} */
+@supports ((text-stroke: 1px var(--label-stroke)) or (-webkit-text-stroke: 1px var(--label-stroke))) {
+  .card__image-label {
     text-shadow: none;
     -webkit-text-stroke: 1px 1px var(--label-stroke);
     text-stroke: 1px 1px var(--label-stroke);
